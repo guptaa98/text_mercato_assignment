@@ -1,1 +1,38 @@
-# text_mercato_assignment
+## Model 1 - Predict Ai based description for an image
+
+## Objective
+Design a model where it will take any fashion image URL and
+generate an AI based description
+
+## Approach to build the model
+1. Model is inspired from the image classification problem where unique description are stored in a list and label encoding is applied on this feature. 
+2. After processing the image and text, keras library is used to build the model and predict the classes. The classes predicted for the description of the test data are stored in 'classes' list.
+3. The description for each test image is the description present at the index = class predicted in the description list.
+
+## Text Processing
+1. A description set is made where it stores all the unique Description which in our data we have 484 unique values.
+2. Label Encoding is performed on Description feature of the dataset.
+
+## Splitting the data
+1. We create a numpy.ndarray 'y' and store our data.Description feature values. 
+2. Using to_categorical from keras.utils.np_utils we perform one hot encoding on 'y' array.
+3. Description feature is removed from the dataset and the path of the image file is modified according to the location of 'Images' folder in our machine.
+4. We split our data into X_train, X_test, y_train, y_test using train_test_split from sklearn.
+
+## Processing the image for the model
+1. Create 2 list imgpath_test and imgpath_train which contain the path of image files from test and train data.
+2. The images in both the data are converted into array form and are stored in x_train and x_test list.
+3. These list are converted into an array x_im_train and x_im_test respectively. 
+4. The values in array are normalised into a range of 0-1 by dividing all the values with maximum value in array.
+
+## Building the model
+1. Import the Sequential Model from keras.models.
+2. Import the Dense, Convolutional 2D(since we have 2D images) layer, maxpooling layer (2D) and Flatten layer.
+3. Then create the model by model = Sequential().
+4. Add the convolutional layer. Specify the no of filters, input_size, kernel_size and activation function.
+5. Add the pooling layer and specify the pool size.
+6. Add a Flatten layer which converts 2D --> 1D
+7. Add a dense layer, specify the number of neurons and activation function.
+8. Add another dense layer which is the output layer also known as classifier, apply the softmax function.
+9. Compile the model, specify the metrics, cost function and optimizer.
+10. Fit the model and then evaluate and predict the class of Description and print them. 
