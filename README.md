@@ -63,7 +63,7 @@ Design a model where it will take any fashion image URL and generate Neckline, M
 2. The images in both the data are converted into array form and are stored in x_train and x_test list.
 3. These list are converted into an array x_im_train and x_im_test respectively. 
 4. The values in array are normalised into a range of 0-1 by dividing all the values with maximum value in array.
-**NOTE - The above process is repeated for the other 2 features which are Pattern and Material 
+**NOTE - The above process is repeated for the other 2 features which are Pattern and Material** 
 
 ## Building the model
 1. Import the Sequential Model from keras.models.
