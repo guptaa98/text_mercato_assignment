@@ -1,4 +1,4 @@
-## Model 1 - Predict Ai based description for an image
+## Model 1 - Predict AI based description for an image
 
 ## Objective
 Design a model where it will take any fashion image URL and
